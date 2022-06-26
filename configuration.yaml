@@ -1,0 +1,4 @@
+restport: ":40000"
+grpcport: ":30000"
+version: "1.0.0"
+environment: "dev2"
