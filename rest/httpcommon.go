@@ -5,7 +5,8 @@ import (
 	"net/http"
 )
 
-func SendResponseJSON(w http.ResponseWriter, status int64, body interface{}) {
+func SendResponseJSON(w http.ResponseWriter, statusCode int, body interface{}) {
+	w.WriteHeader(statusCode)
 	w.Header().Set("Content-Type", "application/json")
 	err := json.NewEncoder(w).Encode(&body)
 	if err != nil {
